@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://www.google.com/sharedservices/content/proxy/Content_Business/v2?wsdl"
+          uri="wsdl/contentbusiness.wsdl"/>
+</catalog>

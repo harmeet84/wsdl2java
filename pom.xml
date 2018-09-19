@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>uk.co.ybs</groupId>
+  <artifactId>webclientgeneratoe</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       
+    </properties>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>1.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                             <goal>wsimport</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+                <configuration>
+                    
+                    <!-- Keep generated files --> 
+                    <keep>true</keep>
+                    <xnocompile>true</xnocompile>
+                    <catalog>${basedir}/src/META-INF/jax-ws-catalog.xml</catalog> 
+                    <!-- <wsdlDirectory>${basedir}/src/META-INF/wsdl/</wsdlDirectory> -->
+                    <!-- <wsdlLocation>/META-INF/contentbusiness.wsdl</wsdlLocation> -->
+                 	<!-- <wsdlFiles> 
+                        <wsdlFile>/META-INF/wsdl/TheWSDL.wsdl</wsdlFile> 
+                    </wsdlFiles>  -->
+                  <!--   <wsdlLocation>/META-INF/wsdl/PartyWSDL.wsdl</wsdlLocation>   -->
+                    <!-- Package name --> 
+                    <!-- <packageName>java.example.echo.service.skeleton</packageName>  -->
+                    <!-- generated source files destination--> 
+                    <sourceDestDir>src/main/java</sourceDestDir> 
+                    <verbose>true</verbose>
+                    <wsdlUrls>
+                        <wsdlUrl>
+                            http://www.google.com?wsdl
+                        </wsdlUrl>
+                    </wsdlUrls>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+ 
+</project>
